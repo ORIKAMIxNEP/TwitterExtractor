@@ -12,7 +12,7 @@ CORS(
 
 
 @app.route("/", methods=["GET"])
-def TwitterExtracter():
+def ExtractTwitter():
     config = json.load(open("./config.json", "r"))
     BEARER_TOKEN = config["BEARER_TOKEN"]
     API_KEY = config["API_KEY"]
@@ -60,4 +60,4 @@ def TwitterExtracter():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=50001, debug=True)
+    app.run(host="0.0.0.0", port=51400, debug=True)
