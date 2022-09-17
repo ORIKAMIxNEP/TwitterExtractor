@@ -1,18 +1,9 @@
-from flask import Flask, request
-from flask_cors import CORS
 import json
-from random import random
+import random
 import tweepy
 
-app = Flask(__name__)
-CORS(
-    app,
-    supports_credentials=True
-)
 
-
-@app.route("/", methods=["GET"])
-def ExtractTwitter():
+def ExtractTwitter(text):
     config = json.load(open("./config.json", "r"))
     BEARER_TOKEN = config["BEARER_TOKEN"]
     API_KEY = config["API_KEY"]
@@ -22,7 +13,7 @@ def ExtractTwitter():
     client = tweepy.Client(BEARER_TOKEN, API_KEY, API_SECRET,
                            ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
-    searchText = request.args.get("word")
+    searchText = text
     next_token = ""
     allTweetsCount = 0
     extractedTweetsCount = 0
@@ -57,7 +48,3 @@ def ExtractTwitter():
     print("ExtractedTweet:" + str(extractedTweetsCount))
     print(TweetsData)
     return TweetsData
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=51400, debug=True)
