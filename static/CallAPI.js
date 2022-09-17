@@ -1,6 +1,6 @@
 function search() {
   fetch(
-    "http://172.31.50.223:50001/?word=" +
+    "http://172.31.50.223/extract_twitter?word=" +
       document.getElementById("search").value
   )
     .then(function (data) {
