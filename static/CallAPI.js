@@ -3,8 +3,8 @@ function search() {
     "http://172.31.50.223/extract_twitter?word=" +
       document.getElementById("search").value
   )
-    .then(function (data) {
-      return data.json();
+    .then(function (response) {
+      return response.json();
     })
     .then(function (TweetsData) {
       let tweetsHTML = "";
