@@ -6,12 +6,12 @@ function search() {
     .then(function (response) {
       return response.json();
     })
-    .then(function (TweetsData) {
+    .then(function (data) {
       let tweetsHTML = "";
-      for (let i = 0; i < TweetsData.tweets.length; i++) {
-        console.log(TweetsData.tweets[i].tweet);
-        console.log(TweetsData.tweets[i].favorite);
-        tweetsHTML += "<p>" + TweetsData.tweets[i].tweet + "<p>";
+      for (let i = 0; i < data.tweets.length; i++) {
+        console.log(data.tweets[i].tweet);
+        console.log(data.tweets[i].favorite);
+        tweetsHTML += "<p>" + data.tweets[i].tweet + "<p>";
         tweets.innerHTML = tweetsHTML;
       }
     });
