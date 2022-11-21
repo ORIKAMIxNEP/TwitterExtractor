@@ -11,7 +11,7 @@ CORS(
 
 
 @app.route("/", methods=["GET"])
-def Web():
+def IndexHTML():
     return render_template("index.html")
 
 
