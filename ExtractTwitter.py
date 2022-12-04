@@ -5,7 +5,7 @@ import tweepy
 
 
 def ExtractTwitter(text):
-    config = json.load(open("./config.json", "r"))
+    config = json.load(open("config.json", "r"))
     BEARER_TOKEN = config["BEARER_TOKEN"]
     API_KEY = config["API_KEY"]
     API_SECRET = config["API_SECRET"]
