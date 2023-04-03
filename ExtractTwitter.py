@@ -1,16 +1,18 @@
-import json
+import os
 import random
 
 import tweepy
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def ExtractTwitter(text):
-    config = json.load(open("config.json", "r"))
-    BEARER_TOKEN = config["BEARER_TOKEN"]
-    API_KEY = config["API_KEY"]
-    API_SECRET = config["API_SECRET"]
-    ACCESS_TOKEN = config["ACCESS_TOKEN"]
-    ACCESS_TOKEN_SECRET = config["ACCESS_TOKEN_SECRET"]
+    BEARER_TOKEN = os.getenv("BEARER_TOKEN")
+    API_KEY = os.getenv("API_KEY")
+    API_SECRET = os.getenv("API_SECRET")
+    ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+    ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
     client = tweepy.Client(BEARER_TOKEN, API_KEY, API_SECRET,
                            ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
