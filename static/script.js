@@ -1,6 +1,6 @@
 function search() {
   fetch(
-    "http://localhost/extract_twitter?word=" +
+    "http://localhost/extract-twitter?word=" +
       document.getElementById("search").value
   )
     .then(function (response) {
