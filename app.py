@@ -15,7 +15,7 @@ def IndexHTML():
     return render_template("index.html")
 
 
-@app.route("/extract_twitter", methods=["GET"])
+@app.route("/extract-twitter", methods=["GET"])
 def CallExtractTwitter():
     return ExtractTwitter(request.args.get("word"))
 
